@@ -1,4 +1,4 @@
-package com.dyx.util;
+package com.dyx.common;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;

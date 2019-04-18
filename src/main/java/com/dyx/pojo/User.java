@@ -1,51 +1,100 @@
 package com.dyx.pojo;
 
-import com.dyx.util.CustomDateDeserializer;
-import com.dyx.util.CustomDateSerializer;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
-import java.io.Serializable;
 import java.util.Date;
 
-public class User implements Serializable {
-    private static final long serialVersionUID = 5666800685634035555L;
+public class User {
+    private Integer id;
 
-    private String name;
+    private String username;
 
-    private Integer age;
+    private String password;
 
+    private String lastPwd;
 
-    @JsonSerialize(using = CustomDateSerializer.class)
-    @JsonDeserialize(using = CustomDateDeserializer.class)
-    @JsonFormat(pattern = "yyyyMMdd", timezone = "GMT+8")
-    private Date birthday;
+    private String token;
+
+    private Date loginTime;
 
     private String email;
 
-    public String getName() {
-        return name;
+    private String phone;
+
+    private String question;
+
+    private String answer;
+
+    private Integer role;
+
+    private Date createTime;
+
+    private Date updateTime;
+
+    public User(Integer id, String username, String password, String lastPwd, String token, Date loginTime, String email, String phone, String question, String answer, Integer role, Date createTime, Date updateTime) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.lastPwd = lastPwd;
+        this.token = token;
+        this.loginTime = loginTime;
+        this.email = email;
+        this.phone = phone;
+        this.question = question;
+        this.answer = answer;
+        this.role = role;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public User() {
+        super();
     }
 
-    public Integer getAge() {
-        return age;
+    public Integer getId() {
+        return id;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Date getBirthday() {
-        return birthday;
+    public String getUsername() {
+        return username;
     }
 
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
+    public void setUsername(String username) {
+        this.username = username == null ? null : username.trim();
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
+    }
+
+    public String getLastPwd() {
+        return lastPwd;
+    }
+
+    public void setLastPwd(String lastPwd) {
+        this.lastPwd = lastPwd == null ? null : lastPwd.trim();
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token == null ? null : token.trim();
+    }
+
+    public Date getLoginTime() {
+        return loginTime;
+    }
+
+    public void setLoginTime(Date loginTime) {
+        this.loginTime = loginTime;
     }
 
     public String getEmail() {
@@ -53,11 +102,54 @@ public class User implements Serializable {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.email = email == null ? null : email.trim();
     }
 
-    @Override
-    public String toString() {
-        return "User [name=" + name + ", age=" + age + ", birthday=" + birthday + ", email=" + email + "]";
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone == null ? null : phone.trim();
+    }
+
+    public String getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question == null ? null : question.trim();
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer == null ? null : answer.trim();
+    }
+
+    public Integer getRole() {
+        return role;
+    }
+
+    public void setRole(Integer role) {
+        this.role = role;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 }
